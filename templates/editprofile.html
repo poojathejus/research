@@ -1,0 +1,59 @@
+{% extends "index.html" %}
+{% block body %}
+
+<form action="/editprofile2" method="post" enctype="multipart/form-data"  >
+
+  <table class="table table-bordered">
+    <tr>
+      <td width="150px">Name</td>
+      <td><input type="text" name="name" class="form-control" value="{{data['name']}}" required="" ></td>
+    </tr>
+
+    <tr>
+      <td>Gender</td>
+      <td>
+        {% if data["gender"]=="Male" %}<input type="radio" name="gender" value="Male" checked>Male <input type="radio" name="gender" value="Female">Female
+       <input type="radio" name="gender" value="Others">Others
+      {% endif %}
+
+
+        {% if data["gender"]=="Female" %}<input type="radio" name="gender" value="Male">Male <input type="radio" name="gender" value="Female" checked>Female
+      <input type="radio" name="gender" value="Others">Others
+      {% endif %}
+
+
+        {% if data["gender"]=="Others" %}<input type="radio" name="gender" value="Male">Male <input type="radio" name="gender" value="Female">Female
+      <input type="radio" name="gender" value="Others" checked>Others
+      {% endif %}
+      </td>
+
+    <tr>
+    <td>DOB</td>
+    <td><input type="date" name="dob" value="{{data['dob']}}" max="2004-12-12" required="" ></td>
+  </tr>
+
+    <tr>
+      <td>Choose Photo</td>
+      <td><input type="file" name="photo"  class="form-control"  ></td>
+
+    </tr>
+
+    <tr>
+      <td>Email</td>
+      <td><input type="email" name="email"  class="form-control" value="{{data['email']}}" required="" ></td>
+    </tr>
+
+    <tr>
+      <td>Phone</td>
+      <td><input type="number" name="phone"  class="form-control" value="{{data['phone']}}" required="" pattern="[789][0-9]{9}"></td>
+    </tr>
+      <tr>
+      <td></td>
+      <td><input type="submit" value="Edit" class="btn btn-success"></td>
+      <td></td>
+    </tr>
+  </table>
+
+</form>
+
+{% endblock %}

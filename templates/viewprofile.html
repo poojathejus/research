@@ -1,0 +1,39 @@
+{% extends "index.html" %}
+{% block body %}
+
+<form action="/viewprofile1">
+
+        <table  class="table table-bordered">
+            
+            <tr>
+                <td><img src="{{data['filename']}}" width="200" height="200"></td>
+            </tr>
+            <tr>
+                <td width="200px">Name</td>
+                <td>{{data['name']}}</td>
+            </tr>
+
+            <tr>
+                <td>Gender</td>
+                <td>{{data['gender']}}</td>
+            </tr>
+
+            <tr>
+                <td>DOB</td>
+                <td>{{data['dob']}}</td>
+            </tr>
+
+            <tr>
+                <td>Email</td>
+                <td>{{data['email']}}</td>
+            </tr>
+
+            <tr>
+                <td>Phone</td>
+                <td>{{data['phone']}}</td>
+            </tr>
+        </table>
+
+</form>
+
+{% endblock %}

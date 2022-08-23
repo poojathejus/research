@@ -1,0 +1,62 @@
+{% extends "index.html" %}
+{% block body %}
+
+<form>
+    <center>
+        <table>
+            <tr>
+                <td>Water Marked Image</td>
+                <td></td>
+                <td></td>
+                <td>Extracted Image</td>
+            </tr>
+
+            <tr>
+                <td><img src="#" width="150" height="150"></td>
+                <td></td>
+                <td></td>
+                <td><img src="#" width="150" height="150"></td>
+            </tr>
+
+            <tr></tr>
+
+            <tr>
+                <td>ROI</td>
+            </tr>
+
+            <tr>
+                <td><img src="#" width="100" height="100" ></td>
+            </tr>
+
+            <tr></tr>
+
+            <tr>
+                <td>Hash of ROI</td>
+            </tr>
+
+            <tr>
+                <td><textarea name="textarea" rows="3" cols="7"></textarea></td>
+            </tr>
+
+            <tr></tr>
+
+            <tr>
+                <td>Extracted Hash From Image</td>
+            </tr>
+
+            <tr>
+                <td><textarea name="textarea" rows="3" cols="7"></textarea></td>
+            </tr>
+
+            <tr></tr>
+
+             <tr>
+                <td>Result :</td>
+                <td><label name="label"></label></td>
+            </tr>
+
+        </table>
+    </center>
+</form>
+
+{% endblock %}

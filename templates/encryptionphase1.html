@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+{% block body %}
+
+<form action="/encryptionphase1b" method="post" enctype="multipart/form-data">
+
+    <table class="table table-bordered">
+      <tr>
+        <td width="200px">Choose Image</td>
+        <td><input type="file" name="image" class="form-control" required></td>
+      </tr>
+
+      <tr>
+        <td>Choose cover image</td>
+        <td><input type="file" name="coverimage" class="form-control" required></td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td><input type="submit" value="Next" class="btn btn-success"></td>
+        <td></td>
+      </tr>
+    </table>
+
+</form>
+
+{% endblock %}

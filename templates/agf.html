@@ -1,0 +1,51 @@
+{% extends "index.html" %}
+{% block body %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-jcrop/0.9.15/css/jquery.Jcrop.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-jcrop/0.9.15/js/jquery.Jcrop.js"></script>
+
+        <img src="/static/images/{{originalimage}}" alt="" id="image">
+        <script>
+            $(document).ready(function(){
+                $('#image').Jcrop({
+                    onSelect: function(c){
+                        console.log(c);
+
+                        console.log(c.x);
+                        console.log(c.y);
+                        console.log(c.w);
+                        console.log(c.h);
+
+                        $("#x").val(c.x);
+                        $("#y").val(c.y);
+                        $("#w").val(c.w);
+                        $("#h").val(c.h);
+                        alert('hai');
+                    }
+                })
+            })
+        </script>
+    <form action="/agf2" method="post" enctype="multipart/form-data">
+        <table class="table table-bordered">
+            <tr>
+                <td>X</td>
+                <td><input type="text" id="x" name="x"></td>
+                <td></td>
+                <td>Y</td>
+                <td><input type="text" id="y" name="y"></td>
+            </tr>
+            <tr>
+                <td>Width</td>
+                <td><input type="text" id="w" name="w"></td>
+                <td></td>
+                <td>Height</td>
+                <td><input type="text" id="h" name="h"></td>
+            </tr>
+
+            <tr>
+                <td><input type="submit" class="btn btn-success"></td>
+            </tr>
+        </table>
+    </form>
+
+    {% endblock %}

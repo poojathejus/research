@@ -1,0 +1,47 @@
+{% extends "index.html" %}
+{% block body %}
+
+<form action="/myfiles2" method="post" enctype="multipart/form-data">
+
+        <table class="table table-bordered">
+            <tr>
+
+                <td>From</td>
+                <td><input type="date" name="from"></td>
+                <td>To</td>
+                <td><input type="date" name="to"></td>
+                <td><input type="submit" value="Filter" name="button"  class="btn btn-success"></td>
+                <td></td><td></td>
+                <td><input type="text" name="text"></td>
+                <td><input type="submit" value="Search"  name="button" class="btn btn-success"></td>
+            </tr>
+        </table>
+            <table class="table table-bordered">
+
+                <thead>
+                    <th>#</th>
+                    <th>Date</th>
+                    <th>Title</th>
+                    <th>Filename</th>
+<!--                    <th>ROI</th>-->
+
+                    <th></th>
+                </thead>
+                {% for i in data %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ i['date'] }}</td>
+                    <td>{{ i['title'] }}</td>
+                    <td>{{ i['filename'] }}<br>{{ i['hash'] }}</td>
+<!--                    <td>{{ i['roi'] }}</td>-->
+
+
+                    <td><a href="/downloadphase1/{{i['filename']}}/{{i['filename2']}}/{{i['fileid']}}">Download</a> </td>
+                </tr>
+                {% endfor %}
+            </table>
+
+
+</form>
+
+{% endblock %}
